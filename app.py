@@ -7,7 +7,7 @@ with open("vect.pickle", "rb") as f:
 with open("nb.pickle", "rb") as f:
     nb = pickle.load(f)
 
-app = Flask("chacha")
+app = Flask(__name__)
 
 @app.route("/")
 def home():
