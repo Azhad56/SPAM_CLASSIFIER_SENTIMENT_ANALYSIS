@@ -20,3 +20,5 @@ def submit():
     y_data = nb.predict(x_data)
     print(y_data)
     return str(y_data)
+if __name__ == "__main__":
+    app.run(port=5000)
