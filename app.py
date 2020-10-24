@@ -1,4 +1,4 @@
-from flask import Flask, templating, request
+from flask import Flask,render_template,url_for,request
 import pickle
 
 with open("vect.pickle", "rb") as f:
@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return templating.render_template("index.html")
+    return render_template("index.html")
 
 @app.route("/submit/", methods=["GET","POST"])
 def submit():
