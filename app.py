@@ -13,7 +13,7 @@ app = Flask(__name__)
 def home():
     return templating.render_template("index.html")
 
-@app.route("/submit/", methods=["post"])
+@app.route("/submit/", methods=["GET","POST"])
 def submit():
     message = request.form["message"]
     x_data = vect.transform([message]).todense()
@@ -21,4 +21,4 @@ def submit():
     print(y_data)
     return str(y_data)
 if __name__ == '__main__':
-	app.run(port=5000,debug=True)
+	app.run(port=8000,debug=True)
